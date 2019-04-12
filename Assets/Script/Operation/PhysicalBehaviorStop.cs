@@ -9,8 +9,8 @@ public class PhysicalBehaviorStop : MonoBehaviour
 {
    
     private Vector3 startPosition;
-    public GameObject _circle;
-    public Rigidbody2D _circleRigid;
+    public GameObject _star;
+    public Rigidbody2D _starRigid;
     public GameObject _btn;
 
     Image _btnImage;
@@ -19,7 +19,7 @@ public class PhysicalBehaviorStop : MonoBehaviour
 
     void Start()
     {
-        startPosition = _circle.transform.position;
+        startPosition = _star.transform.position;
         _btnImage = _btn.GetComponent<Image>();
 
     }
@@ -38,8 +38,8 @@ public class PhysicalBehaviorStop : MonoBehaviour
         if (btnSwitchFlag == false)
         {
             _btnImage.sprite = _playSprite;
-            _circle.transform.position = startPosition;
-            _circleRigid.velocity = Vector3.zero;
+            _star.transform.position = startPosition;
+            _starRigid.velocity = Vector3.zero;
             Time.timeScale = 0.0f;
         }
     }
