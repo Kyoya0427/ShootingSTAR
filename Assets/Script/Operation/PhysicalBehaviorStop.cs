@@ -9,8 +9,8 @@ public class PhysicalBehaviorStop : MonoBehaviour
 {
    
     private Vector3 startPosition;
-    public GameObject _circle;
-    public Rigidbody2D _circleRigid;
+    public GameObject _star;
+    public Rigidbody2D _starRigid;
     public GameObject _btn;
 
     Image _btnImage;
