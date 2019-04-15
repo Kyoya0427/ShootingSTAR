@@ -179,8 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75d3de7d4a28f042a9d32818aed6cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootingSterBody: {fileID: 7290589488882103098, guid: 518f667ca74b6fa4b8379087b7ab2519,
-    type: 3}
-  _shootingSter: {fileID: 7290589488882103103, guid: 518f667ca74b6fa4b8379087b7ab2519,
-    type: 3}
+  _shootingSterBody: {fileID: 0}
+  _shootingSter: {fileID: 0}
   _planetBody: {fileID: 2138560103}
