@@ -5,24 +5,37 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GoolJudgment : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    public Rigidbody2D _rigidStar;
+    private bool _colFlag;
+
     void Start()
     {
-        
+        _colFlag = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(_colFlag == true)
+        {
+            Invoke("ChangeScene", 3.0f);
+        }
     }
 
+    void ChangeScene()
+    {
+        Debug.Log("a");
+        SceneManager.LoadScene("ClearScene");
+    }
+
+    //ゴール判定
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Gool")
         {
-
-            SceneManager.LoadScene("ClearScene");
-        }
+            _colFlag = true;
+            _rigidStar.velocity = Vector3.zero;
+            _rigidStar.angularVelocity = 0.0f;
+        } 
     }
 }

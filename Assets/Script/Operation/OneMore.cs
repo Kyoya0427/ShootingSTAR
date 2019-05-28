@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class OneMore : MonoBehaviour
 {
+    private string _stageName;
+
+    
+    void Start()
+    {
+        _stageName = ResetScene.GetSceneName();
+
+    }
+
     public void OnClick()
     {
-        SceneManager.LoadScene("1-1");
+        SceneManager.LoadScene(_stageName);
     }
 }

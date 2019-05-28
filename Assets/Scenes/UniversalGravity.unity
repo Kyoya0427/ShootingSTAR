@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288230856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: -0.16, z: 0}
+  m_LocalPosition: {x: 2.21, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1834184577}
@@ -247,6 +247,7 @@ MonoBehaviour:
   _shootingSterBody: {fileID: 421839253}
   _shootingSter: {fileID: 421839251}
   _planetBody: {fileID: 288230858}
+  _gravitFlag: 0
 --- !u!1 &421839251
 GameObject:
   m_ObjectHideFlags: 0

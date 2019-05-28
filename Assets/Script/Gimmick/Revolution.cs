@@ -4,32 +4,39 @@ using UnityEngine;
 
 public class Revolution : MonoBehaviour
 {
-    public GameObject _gravitation;
-    public Rigidbody2D _rigidStar;
-    public bool _collisionFlag = false;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField]
+    public GameObject _playBtn;
+    private GameObject _planet;         //惑星
+    private bool _btnFlag;              //ドラックフラグ
+    [SerializeField]
+    public Rigidbody2D _rigidStar;      //星リジットボディー
+    public bool _collisionFlag = false; //回転フラグ
+    private bool _playFlag = false;
     // Update is called once per frame
     void Update()
     {
-      
+
+        _playFlag = _playBtn.GetComponent<PlayAndStop>()._clickFlag;
+        //ドラック＆ドロップし終わったなら
+
+        _planet = GameObject.FindWithTag("Planet");
+        
+
+        //回転フラグtrueなら
         if (_collisionFlag == true)
         {
-            transform.localPosition += (transform.position - _gravitation.transform.position).normalized / 5 * Time.deltaTime;
-            transform.RotateAround(_gravitation.transform.position, Vector3.back, 60 * Time.deltaTime);
-
+            gameObject.transform.localPosition += (gameObject.transform.position - _planet.transform.position).normalized / 5 * Time.deltaTime;
+            gameObject.transform.RotateAround(_planet.transform.position, Vector3.back, 60 * Time.deltaTime);
         }
     }
 
+    //回転フラグ
     void OnCollisionEnter2D(Collision2D col)
     {
-       _rigidStar.velocity = Vector3.zero;
-        _collisionFlag = true;
-
+        if (col.gameObject.tag == "Planet" && _playFlag == true)
+        {
+            _collisionFlag = true;
+            _rigidStar.velocity = Vector3.zero;
+        }
     }
 }
